@@ -1,6 +1,5 @@
 var swiperStories = new Swiper('.swiper-stories', {
   slidesPerView: 'auto',
-  spaceBetween: 5,
   grabCursor: true
 });
 
@@ -17,4 +16,16 @@ bottomShowMenu.addEventListener('click', () => {
 closeSidebar.addEventListener('click', () => {
  sidebar.classList.remove('active')
  document.body.style.overflowY = 'scroll';
+})
+
+window.addEventListener('scroll', () => {
+ let footer = document.querySelector('#footer');
+ const bottomNav = document.querySelector('.bottom-nav');
+ const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+ if(window.scrollY === scrollable) {
+  bottomNav.classList.add('active'); 
+ } else {
+  bottomNav.classList.remove('active'); 
+ }
+
 })

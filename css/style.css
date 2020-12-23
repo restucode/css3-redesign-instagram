@@ -43,7 +43,7 @@ body {
     padding-right: 10px;
 }
 .nav-search svg {
-    width: 30px;
+    width: 25px;
     color: #1C1C1C;
 }
 
@@ -90,7 +90,7 @@ body {
 }
 
 .swiper-stories .swiper-slide span {
-    font-size: .9rem;
+    font-size: .85rem;
     text-align: center;
     padding-top: 8px;
     padding-left: 10px;
@@ -102,8 +102,8 @@ body {
 
 
 .swiper-stories .stories-img img {
-    width: 88px;
-    height: 88px;
+    width: 75px;
+    height: 75px;
     border-radius: 1000px;
     object-fit: cover;
     border: 2px solid #E9E9E9;
@@ -113,8 +113,8 @@ body {
 .swiper-stories .add-stories {
     position: absolute;
     background: linear-gradient(to bottom, #9139A7, #FA8F21);
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     border-radius: 1000px;
     display: flex;
     justify-content: center;
@@ -126,13 +126,13 @@ body {
 }
 .swiper-stories .add-stories svg {
     color: white;
-    width: 30px;
+    width: 25px;
 }
 
 
 .stories-outer-linear {
-    width: 85px;
-    height: 85px;
+    width: 75px;
+    height: 75px;
     border-radius: 50%;
     background: linear-gradient(to bottom, #9139A7, #FAB36C);
     display: flex;justify-content: center;align-items: center;
@@ -144,8 +144,8 @@ body {
 }
 
 .stories-outer-white {
-  width: 79px;
-  height: 79px;
+  width: 71px;
+  height: 71px;
   border-radius: 50%;
   background: white;
 
@@ -154,8 +154,8 @@ body {
 }
 
 .stories-outer-white img {
-    width: 81px;
-    height: 81px;
+    width: 73px;
+    height: 73px;
     object-fit: cover;
     border-radius: 50%;
     /*padding: 4px;*/
@@ -449,6 +449,14 @@ body {
     padding: 10px;
     background-color: white;
     box-shadow: 0 -1px 5px 1px rgba(0,0,0,.1);
+    visibility: visible;
+    opacity: 1;
+    transition: .3s;
+}
+
+.bottom-nav.active {
+visibility: hidden;
+  opacity: 0;
 }
 
 .bottom-nav-area {
@@ -494,8 +502,60 @@ body {
     color: white;
 }
 
+/*footer*/
+
+.footer {
+    padding: 0 20px;
+}
+
+.footer-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.footer-area img {
+    padding: 10px 0;
+}
+
+.footer-area span {
+    font-size: .9rem;
+    color: #555555;
+    padding: 5px 0;
+}
+
+.footer-area div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-area a {
+      font-size: .9rem;
+    color: #555555;
+    padding: 5px 0;  
+}
+
+.footer-area div svg {
+    width: 18px;
+    margin-left: 5px;
+}
+
+@media screen and (min-width: 350px) {
+    .bottom-nav-area {
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+}
+
 @media screen and (min-width: 768px) {
   .card-feed {
     grid-column: span 6;
-}  
+  }  
+}
+
+@media screen and (min-width: 1024px) {
+    
 }
