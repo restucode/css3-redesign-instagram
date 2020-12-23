@@ -3,6 +3,27 @@
     --roboto : 'Roboto', sans-serif;
 }
 
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 0;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #DEDEDE;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 * {
     padding: 0px;
     margin: 0px;
@@ -23,12 +44,12 @@ html {
 body {
     height: 100%;
     width: 100%;
-    max-width: 1500px;
     position: relative;
     background-color: #fff;
     margin: 0px auto;
     font-family: var(--roboto);
     overflow-x: hidden;
+
 }
 
 /*nav*/
@@ -49,6 +70,17 @@ body {
 
 
 /*stories*/
+
+.stories {
+    top: inherit;
+    left: inherit;
+    position: inherit;
+    right: inherit;
+    padding: inherit;
+}
+.stories h2 {
+    display: none;
+}
 .swiper-stories {
   height: 120px;
 }
@@ -164,7 +196,14 @@ body {
 
 /*feed*/
 .feed {
+    top: inherit;
+    left: inherit;
+    position: inherit;
+    right: inherit;
     padding: 20px 20px;
+}
+.feed h2 {
+    display: none;
 }
 
 .box-feed {
@@ -188,7 +227,7 @@ body {
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
 }
 
-.card-feed img {
+.card-feed-img {
     width: 100%;
     height: 300px;
     object-fit: cover;
@@ -308,10 +347,6 @@ body {
 }
 
 .sidebar-brand {
-    position: absolute;
-    top: 35px;
-    left: 49%;
-    transform: translate(-50%,-50%);
     display: none;
 }
 
@@ -465,6 +500,10 @@ visibility: hidden;
     align-items: center;
 }
 
+.form-bottom-search {
+    display: none;
+}
+
 .bottom-add-photo {
     display: flex;
     justify-content: center;
@@ -557,5 +596,168 @@ visibility: hidden;
 }
 
 @media screen and (min-width: 1024px) {
-    
+    body {
+        margin: inherit;
+    }
+   .nav {
+    display: none;
+   }
+
+   .stories {
+    top: 60px;
+    left: 300px;
+    position: absolute;
+    right: 0;
+    padding: 20px 20px;
+   }
+
+   .stories h2 {
+    display: block;
+    padding: 0 20px;
+   }
+
+   .feed {
+    top: 220px;
+    left: 300px;
+    position: absolute;
+    right: 0;
+    padding: 20px 45px;
+   }
+
+   .feed h2 {
+    display: block;
+    margin-bottom: 18px;
+   }
+
+    .card-feed {
+     grid-column: span 12;
+    }  
+
+    .card-feed-img{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+
+
+
+   /*sidebar*/
+
+   .sidebar {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    top: 0;
+    left: 0;
+    right: inherit;
+    bottom: 0;
+    width: 300px;
+    position: fixed;
+    background-color: #FAFAFA;
+
+   }
+
+   .sidebar-brand {
+    display: block;
+    position: absolute;
+    top: 35px;
+    left: 85px;
+    transform: translate(-50%,-50%);
+   }
+
+   .close-sidebar {
+    display: none;
+   }
+
+   .sidebar-area {
+    padding-top: 90px;
+   }
+
+   .bottom-nav {
+    top: 0;
+    left: 300px;
+    position: absolute;
+    bottom: inherit;
+    right: 0;
+    box-shadow: inherit;
+    visibility: inherit;
+    opacity: inherit;
+    transition: inherit;
+    padding: 20px 40px;
+    /*background-color: red;*/
+   }
+
+   .bottom-nav-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: inherit;
+    margin: inherit;
+   }
+
+   .form-bottom-search {
+    background-color: #F4F4F4;
+    display: flex;
+    width: 217px;
+    height: 30px;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 10px;
+    border-radius: 12px;
+   }
+
+   .form-bottom-search input {
+    background: none;
+     color: #b4b4b4;
+    text-indent: 30px;
+   }
+
+   .form-bottom-search svg {
+    width: 20px;
+    position: absolute;
+    background-color: #F4F4F4;
+    color: #b4b4b4;
+   }
+
+   .bottom-add-photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #9139A7, #FA8F21);
+    width: 119px;
+    height: 30px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    }
+
+    .bottom-add-photo svg {
+    width: 25px;
+    transform: translateX(-7px);
+    }
+
+    .bottom-add-photo span {
+        font-size: .9rem;
+    }
+
+   .bottom-show-menu {
+    display: none;
+   }
+
+
+
+   .footer {
+    display: none;
+   }
+}
+
+@media screen and (min-width: 1500px) {
+    body {
+      max-width: 1500px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 }
