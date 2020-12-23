@@ -1,4 +1,10 @@
 # css3-redesign-instagram
-CSS3 Redesign Instagram
-\n Slicing Restu Kersana
-\n Design  Naufal Hanif Ramadhan
+Redesign Instagram
+
+---
+
+Slicing Restu Kersana
+
+---
+
+Design Naufal Hanif Ramdhan
