@@ -62,10 +62,12 @@ body {
 
 .nav-search {
     padding-right: 10px;
+
 }
 .nav-search svg {
     width: 25px;
     color: #1C1C1C;
+     cursor: pointer;
 }
 
 
@@ -87,7 +89,7 @@ body {
 
 .swiper-stories .swiper-wrapper {
     align-items: center;
-    padding-left: 10px;
+    padding: 0 10px;
     /*padding:  0;*/
 
 }
@@ -194,6 +196,20 @@ body {
     padding: 4px 4px 4px 4px;
 }
 
+.live-stories {
+    position: absolute;
+    width: 50px;
+    height: 20px;
+    font-size: .8rem;
+    color: white;
+    bottom: 48px;
+    border: 2px solid white;
+    border-radius: 3px;
+    left: 22px;
+    text-align: center;
+    background: linear-gradient(to bottom, #9039A7, #F98D22);
+}
+
 /*feed*/
 .feed {
     top: inherit;
@@ -257,6 +273,7 @@ body {
     width: 24px;
     height: 24px;
     margin: 0 0 0 10px;
+    cursor: pointer;
 }
 
 
@@ -312,6 +329,16 @@ body {
     text-align: left;
 }
 
+.view-all-comment {
+ font-size: .9rem;
+ margin: 10px;
+ text-align: left;
+ display: inline-block;
+ color: #8D8D8D;
+ cursor: pointer;
+
+}
+
 /*sidebar*/
 .sidebar {
     position: fixed;
@@ -340,10 +367,14 @@ body {
 .close-sidebar {
     position: absolute;
     width: 30px;
-     color: #1C1C1C;
+    color: #3B3B3B;
     top: 20px;
     left: 20px;
     cursor: pointer;
+}
+
+.close-sidebar-dekstop {
+    display: none;
 }
 
 .sidebar-brand {
@@ -513,6 +544,7 @@ visibility: hidden;
     height: 40px;
     border-radius: 20px;
     color: white;
+    cursor: pointer;
 }
 
 .bottom-add-photo svg {
@@ -534,6 +566,7 @@ visibility: hidden;
     width: 40px;
     display: flex;
     justify-content: center;
+    cursor: pointer;
     align-items: center;
 }
 .bottom-show-menu svg {
@@ -544,7 +577,7 @@ visibility: hidden;
 /*footer*/
 
 .footer {
-    padding: 0 20px;
+    padding: 0 20px 30px;
 }
 
 .footer-area {
@@ -598,6 +631,7 @@ visibility: hidden;
 @media screen and (min-width: 1024px) {
     body {
         margin: inherit;
+        overflow-y: scroll;
     }
    .nav {
     display: none;
@@ -608,12 +642,18 @@ visibility: hidden;
     left: 300px;
     position: absolute;
     right: 0;
-    padding: 20px 20px;
+    padding: 20px 30px 20px 0;
+    transition: .3s ease;
+   }
+
+   .stories.active-desktop {
+    left: 0;
+    padding: 20px 100px 20px 73px;
    }
 
    .stories h2 {
     display: block;
-    padding: 0 20px;
+    padding: 0 25px;
    }
 
    .feed {
@@ -621,7 +661,13 @@ visibility: hidden;
     left: 300px;
     position: absolute;
     right: 0;
-    padding: 20px 45px;
+    padding: 20px 30px;
+    transition: .3s ease;
+   }
+
+   .feed.active-desktop {
+     left: 0;
+      padding: 20px 100px;
    }
 
    .feed h2 {
@@ -655,7 +701,13 @@ visibility: hidden;
     width: 300px;
     position: fixed;
     background-color: #FAFAFA;
+    visibility: visible;
+    transition: .5s ease;
+   }
 
+   .sidebar.active-desktop {
+    left: -300px;
+    visibility: hidden;
    }
 
    .sidebar-brand {
@@ -669,6 +721,33 @@ visibility: hidden;
    .close-sidebar {
     display: none;
    }
+
+     .close-sidebar-dekstop {
+    background: linear-gradient(to bottom, #9139A7, #FA8F21);
+    border-radius: 1000px;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 298px;
+    transform: translate(-50%,-50%);
+    z-index: 1000;
+    transition: .5s ease;
+    }
+     .close-sidebar-dekstop svg {
+    width: 30px;
+    color: white;
+    transform: rotate(0deg);
+    }
+
+    .close-sidebar-dekstop.active-desktop {
+    left: 0;
+    transform: rotate(180deg);
+    }
 
    .sidebar-area {
     padding-top: 90px;
@@ -684,8 +763,14 @@ visibility: hidden;
     visibility: inherit;
     opacity: inherit;
     transition: inherit;
-    padding: 20px 40px;
+     padding: 20px 28px 20px 25px;
+     transition: .3s ease;
     /*background-color: red;*/
+   }
+
+   .bottom-nav.active-desktop {
+    left: 0;
+    padding: 20px 100px;
    }
 
    .bottom-nav-area {
